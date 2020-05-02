@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+
+  local_mkcert:
+    container_name: mkcert
+    hostname: mkcert
+    build:
+      context: .
+      dockerfile: ./Dockerfile_rpi4_go_mkcert
+    image: rpi4_go_alpine_mkcert:latest
+    env_file:
+      - ./mkcert.env
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - './mkcert-data:/root/.local/share/mkcert' 
+    restart: always
+ 
+ 
+    
+
