@@ -1,1 +1,2 @@
 mkcert.env*
+mkcert-data/*.pem
